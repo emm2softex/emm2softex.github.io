@@ -217,7 +217,7 @@ button {
 }
 
 .layout_padding {
-    padding-top: 90px;
+    padding-top: 50px;
     padding-bottom: 0px;
 }
 
@@ -351,7 +351,7 @@ button {
 .banner_section {
     width: 100%;
     float: left;
-    padding-bottom: 305px;
+    padding-bottom: 150px;
 }
 
 .banner_taital {
