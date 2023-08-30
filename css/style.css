@@ -1021,3 +1021,11 @@ button {
 .modal-dialog {
     max-width: 70%;
   }
+
+.col-md-2 ul {
+	list-style-type: none;
+}
+
+.col-md-4 ul {
+	list-style-type: none;
+}
