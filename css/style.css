@@ -1022,10 +1022,10 @@ button {
     max-width: 70%;
   }
 
-.col-md-2 ul {
+.col-md-2 li {
 	list-style-type: none;
 }
 
-.col-md-4 ul {
+.col-md-4 li {
 	list-style-type: none;
 }
