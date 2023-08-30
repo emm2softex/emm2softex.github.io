@@ -1017,3 +1017,7 @@ button {
 	margin-left: 1em;
 	list-style: disc;
 }
+
+.modal-dialog {
+    max-width: 70%;
+  }
