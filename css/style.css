@@ -1013,7 +1013,7 @@ button {
     color: #e27141;
 }
 
-.modal-body ul, li, ol {
+.modal-body ul li ol {
 	margin-left: 1em;
 	list-style: disc;
 }
