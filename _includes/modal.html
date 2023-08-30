@@ -1,14 +1,42 @@
-<div class="modal fade" id="ModalFotocomp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
+<style>
+ol {
+  list-style-type: none;
+  counter-reset: item;
+  margin: 0;
+  padding: 0;
+}
+
+ol > li {
+  display: table;
+  counter-increment: item;
+  margin-bottom: 0.6em;
+}
+
+ol > li:before {
+  content: counters(item, ".") ". ";
+  display: table-cell;
+  padding-right: 0.6em;    
+}
+
+li ol > li {
+  margin: 0;
+}
+
+li ol > li:before {
+  content: counters(item, ".") " ";
+}
+</style>
+<div class="modal fade" id="ModalFotocomp" tabindex="-1" role="dialog" aria-labelledby="ModalFotocompLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Fotografia Computacional</h5>
+				<h2 class="modal-title" id="ModalFotocompLabel">Fotografia Computacional</h2>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
 			<div class="modal-body">
-				<h2>Objetivos:</h2>
+				<h3>Objetivos:</h3>
 					<p>Compreender conceitos básicos e etapas fundamentais no processamento digital de imagens:
 					Estabelecer o entendimento dos princípios básicos sobre luz, espectro, o olho humano e o processo de formação de Imagens;
 					Compreender também como as imagens são capturadas, representadas e manipuladas digitalmente é essencial para avançar nas técnicas mais sofisticadas.</p>
@@ -26,7 +54,295 @@
 					Será explorado como as cores são modeladas digitalmente e como a percepção humana de cores é considerada. Também com ênfase em aprender a aprimorar e corrigir imagens coloridas.</p>
 					<p>Estudar o que representa a compressão de imagem, incluindo o significado de fazê-la sem perdas e com perdas:
 					É importante entender como as imagens podem ser comprimidas para economizar espaço e largura de banda.</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+			</div>
+		</div>
+	</div>
+</div>
 
+
+<div class="modal fade" id="ModalDeep" tabindex="-1" role="dialog" aria-labelledby="ModalDeepLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2 class="modal-title" id="ModalDeepLabel">Aprendizagem de Máquina e Profunda</h2>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<h3>Objetivos:</h3>
+				<ul>
+					<li>Conhecer os modelos Redes Neurais, Perceptron e CNN</li>
+					<li>Definição de arquitetura, função de perdas e otimizadores</li>
+					<li>Geração, augmentation e rotulação de bases</li>
+					<li>Avaliação e Visualização</li>
+					<li>Aprendizagem profunda para processamento de imagens e visão computacional.</li>
+				</ul>
+				<h3>Tópicos</h3>
+				<ul>
+					<li>Introdução: O que são Redes Neurais; Tipos de Aprendizagem; Aplicações</li>
+					<li>Perceptron e MLP: Regressão Linear; Softmax; Perceptron multicamadas; Seleção de Modelo; Underfitting e Overfitting; Dropout; Backpropagation; Otimização</li>
+					<li>CNN e Classificação: Camadas e Blocos; Gerenciamento de Parâmetros; Convolução; Pooling; Arquiteturas; Função perda; LeNet; AlexNet; VGG; NiN; GoogLeNet; Normalização; ResNet; DenseNet; ConvNext</li>
+					<li>Redes de Detecção, Segmentação e Restauração: Deteção, bounding box - Yolo; Segmentação, Semântica e Panóptica; UNET</li>
+				</ul>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="ModalHalide" tabindex="-1" role="dialog" aria-labelledby="ModalHalideLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2 class="modal-title" id="ModalHalideLabel">Linguagem de programação Halide</h2>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<h3>Objetivos:</h3>
+				<ul>
+					<li>Apresentar fundamentos da otimização de algoritmos de processamento de imagens e fotografia computacional</li>
+					<li>Prover uma base teórica e prática de programação na linguagem de domínio específico (DSL) Halide</li>
+					<li>Apresentar métodos de implementação de pipelines e de interoperabilidade do Halide com C++</li>
+				</ul>
+				<h3>Ementa:</h3>
+				<ol>
+					<li>Tópicos em otimização de algoritmos de processamento de imagens
+						<ol>
+							<li>Localidade, trabalho redundante e paralelismo</li>
+							<li>Algoritmo vs. Schedule</li>
+							<li>Técnicas de otimização</li>
+						</ol>
+					</li>
+					<li>Conceitos e estruturas básicas em Halide
+						<ol>
+							<li>Buffer, Var, Expr, RDom, Func</li>
+							<li>Generator, GeneratorParam</li>
+							<li>I/O de imagem e layouts de memória</li>
+							<li>Sistema de tipagem e casting</li>
+							<li>Metaprogramação</li>
+							<li>Benchmarking</li>
+						</ol>
+					</li>
+					<li>Tópicos em scheduling
+						<ol>
+							<li>Scheduling de funções e pipelines</li>
+							<li>Autoscheduling</li>
+						</ol>
+					</li>
+					<li>Debugging de código Halide
+						<ol>
+							<li>Printing e tracing</li>
+							<li>Interpretação dos arquivos de pseudo-código (stmt)</li>
+						</ol>
+					</li>
+					<li>Pipelines complexas
+						<ol>
+							<li>Pipelines com múltiplas saídas</li>
+							<li>Pipelines com feedback/iterativas</li>
+							<li>Extern</li>
+						</ol>
+					</li>
+					<li>Aplicações
+						<ol>
+							<li>Filtragem e realce de imagens</li>
+							<li>Operações em espaços de cor e operações morfológicas</li>
+							<li>Criação de efeitos e estilização de imagem</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="ModalAPSH" tabindex="-1" role="dialog" aria-labelledby="ModalAPSHLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2 class="modal-title" id="ModalAPSHLabel">Análise e Performance de Sistemas Heterogêneos</h2>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<h3>Objetivos:</h3>
+				<p>Conhecer os tipos de sistemas de computação e as principais arquiteturas para computação heterogênea. Entender as principais características e requisitos para diferentes sistemas e hardwares.</p>
+				<p>Avaliar técnicas e ferramentas de programação para o desenvolvimento de aplicações em sistemas heterogêneos (CPU-GPU).</p>
+				<p>Conhecer os principais componentes de aceleração de operações com GPU. Implementar  e avaliar a performance dos algoritmos em diferentes configurações.</p>
+				<h3>Tópicos:</h3>
+				<ul>
+					<li>Introdução
+						<ul>
+							<li>Introdução computação heterogênea</li>
+							<li>Classificação das arquiteturas de processamento
+								<ul>
+									<li>Taxonomia das arquiteturas de hardware</li>
+									<li>SIMD e instruções vetoriais</li>
+									<li>Arquiteturas multi-core</li>
+									<li>Systems-on-chip (SoCs)</li>
+								</ul>
+							</li>
+							<li>Características e trade-offs dos hardwares
+								<ul>
+									<li>Performance x consumo de energia</li>
+									<li>Execução superescalar</li>
+									<li>Sistemas de memória</li>
+								</ul>
+							</li>
+							<li>Computação paralela e modelos de programação
+								<ul>
+									<li>Threads e memória compartilhada</li>
+									<li>Granularidade de paralelismo</li>
+								</ul>
+							</li>
+							<li>Aceleração de hardware
+								<ul>
+									<li>GPUs</li>
+									<li>Systems-on-chip (SoCs)</li>
+								</ul>
+							</li>
+							<li>Programação em GPU
+								<ul>
+									<li>Hierarquia e arquiteturas das GPUs (SIMT)</li>
+									<li>Evolução das GPUs</li>
+									<li>Softwares, utilização de recursos e tipos de operações</li>
+									<li>GPU performance e compute capability</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>Paralelismo e programação em CUDA
+					<ul>
+						<li>NVCC e Runtime</li>
+						<li>Modelo de programação em GPU</li>
+						<li>Organização de kernels e gerenciamento de dispositivos</li>
+						<li>Avaliação de performance e uso de profilers</li>
+						<li>Métricas de avaliação de performance (tempo, consumo e largura de banda utilizada)</li>
+						<li>Modelo de execução e divergência</li>
+						<li>Paralelismo dinâmico</li>
+						<li>Gerenciamento de memória (modelo, acesso, e largura de banda)</li>
+						<li>Streams e concorrência</li>
+						<li>Considerações de otimização para deployment</li>
+						<li>Cuda SDKs</li>
+						<li>Exemplos: soma de matrizes, multiplicação de matrizes, operações básicas em imagens (escala, rotação, mudança de brilho)</li>
+					</ul>
+					</li>
+					<li>Paralelismo em OpenCL
+					<ul>
+						<li>Objetivos, padrões e especificações</li>
+						<li>Modelo de execução em OpenCL e plataformas</li>
+						<li>Kernels, modelo de programação (CUDA x OpenCL)</li>
+						<li>Modelos de memória</li>
+						<li>Profiling e debugging</li>
+						<li>Exemplos: soma de matrizes, multiplicação de matrizes, operações básicas em imagens (escala, rotação, mudança de brilho/contraste)</li>
+						<li>Tarefa: Implementação dos exemplos em CUDA/OpenCL/CPU e comparação da performance. Testar diferentes modelos e parâmetros de execução para a GPU utilizada com OpenCL e CUDA</li>
+					</ul>
+					</li>
+					<li>Parallel Patterns
+					<ul>
+						<li>Redução</li>
+						<li>Histograma</li>
+						<li>Convolução</li>
+						<li>Matrizes esparsas</li>
+						<li>Nvidia Sparse Tensor core</li>
+						<li>Exemplos: histograma em imagens, convolução de imagens, aplicação de filtros, detecção de arestas</li>
+					</ul>
+					</li>
+					<li>Casos de uso e avaliação de aplicações
+					<ul>
+						<li>Clusterização de imagens</li>
+						<li>Compressão de imagens</li>
+						<li>Image warping </li>
+					</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="ModalFotocomp" tabindex="-1" role="dialog" aria-labelledby="ModalFotocompLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2 class="modal-title" id="ModalFotocompLabel">Análise e Performance de Sistemas com IA</h2>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<h3>Objetivos:</h3>
+					<p>Compreender conceitos básicos e etapas fundamentais no processamento digital de imagens:
+					Estabelecer o entendimento dos princípios básicos sobre luz, espectro, o olho humano e o processo de formação de Imagens;
+					Compreender também como as imagens são capturadas, representadas e manipuladas digitalmente é essencial para avançar nas técnicas mais sofisticadas.</p>
+					<p>Aprender sobre diversos tipos de imagens e como os pixels são armazenados digitalmente:
+					Entender as diferentes formas de representar imagens, desde imagens em preto e branco até imagens coloridas. Aprender sobre a estrutura de pixels e como as informações de cor são armazenadas em forma digital.</p>
+					<p>Estudar operações básicas de processamento de imagem:
+					Compreender algoritmos de análise de imagem assim como transformações de imagens usadas no processamento de imagens digitais</p>
+					<p>Explorar técnicas como equalização de histograma, expansão de contraste e filtragem espacial para aprimorar a qualidade da imagem
+					Nesta etapa, serão abordadas as técnicas que melhoram a aparência e a qualidade das imagens. A equalização de histograma ajusta o contraste, enquanto a filtragem espacial remove o ruído e melhora detalhes.</p>
+					<p>Entender a importância da transformada de Fourier na análise e manipulação no domínio da frequência:
+					Serão introduzidos conhecimentos sobre a transformada de Fourier com aplicação na análise de frequência das imagens. Isso é essencial para entender como diferentes frequências contribuem para a aparência da imagem.</p>
+					<p>Estudar métodos para restaurar imagens degradadas por ruído, desfoque ou outros fatores:
+					Aprender técnicas para remover imperfeições das imagens, como ruído ou desfoque, de modo a recuperar informações perdidas e melhorar a nitidez.</p>
+					<p>Adquirir conhecimento sobre modelos de cor, percepção e técnicas para aprimoramento e correção de imagens coloridas:
+					Será explorado como as cores são modeladas digitalmente e como a percepção humana de cores é considerada. Também com ênfase em aprender a aprimorar e corrigir imagens coloridas.</p>
+					<p>Estudar o que representa a compressão de imagem, incluindo o significado de fazê-la sem perdas e com perdas:
+					É importante entender como as imagens podem ser comprimidas para economizar espaço e largura de banda.</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="ModalFotocomp" tabindex="-1" role="dialog" aria-labelledby="ModalFotocompLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2 class="modal-title" id="ModalFotocompLabel">Análise de Qualidade de Imagem</h2>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<h3>Objetivos:</h3>
+					<p>Compreender conceitos básicos e etapas fundamentais no processamento digital de imagens:
+					Estabelecer o entendimento dos princípios básicos sobre luz, espectro, o olho humano e o processo de formação de Imagens;
+					Compreender também como as imagens são capturadas, representadas e manipuladas digitalmente é essencial para avançar nas técnicas mais sofisticadas.</p>
+					<p>Aprender sobre diversos tipos de imagens e como os pixels são armazenados digitalmente:
+					Entender as diferentes formas de representar imagens, desde imagens em preto e branco até imagens coloridas. Aprender sobre a estrutura de pixels e como as informações de cor são armazenadas em forma digital.</p>
+					<p>Estudar operações básicas de processamento de imagem:
+					Compreender algoritmos de análise de imagem assim como transformações de imagens usadas no processamento de imagens digitais</p>
+					<p>Explorar técnicas como equalização de histograma, expansão de contraste e filtragem espacial para aprimorar a qualidade da imagem
+					Nesta etapa, serão abordadas as técnicas que melhoram a aparência e a qualidade das imagens. A equalização de histograma ajusta o contraste, enquanto a filtragem espacial remove o ruído e melhora detalhes.</p>
+					<p>Entender a importância da transformada de Fourier na análise e manipulação no domínio da frequência:
+					Serão introduzidos conhecimentos sobre a transformada de Fourier com aplicação na análise de frequência das imagens. Isso é essencial para entender como diferentes frequências contribuem para a aparência da imagem.</p>
+					<p>Estudar métodos para restaurar imagens degradadas por ruído, desfoque ou outros fatores:
+					Aprender técnicas para remover imperfeições das imagens, como ruído ou desfoque, de modo a recuperar informações perdidas e melhorar a nitidez.</p>
+					<p>Adquirir conhecimento sobre modelos de cor, percepção e técnicas para aprimoramento e correção de imagens coloridas:
+					Será explorado como as cores são modeladas digitalmente e como a percepção humana de cores é considerada. Também com ênfase em aprender a aprimorar e corrigir imagens coloridas.</p>
+					<p>Estudar o que representa a compressão de imagem, incluindo o significado de fazê-la sem perdas e com perdas:
+					É importante entender como as imagens podem ser comprimidas para economizar espaço e largura de banda.</p>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
