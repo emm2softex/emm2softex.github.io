@@ -129,8 +129,9 @@ ul,
 li,
 ol {
     margin: 0px;
+	margin-left: 1em;
     padding: 0px;
-    list-style: none;
+    list-style: disc;
 }
 
 p {
@@ -1012,9 +1013,4 @@ button {
 
 .copyright_text a:hover {
     color: #e27141;
-}
-
-.modal-body ul {
-	margin-left: 1em;
-	list-style: disc;
 }
