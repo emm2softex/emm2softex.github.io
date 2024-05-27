@@ -117,10 +117,13 @@
 	<!-- copyright section end -->
 	<!-- Javascript files-->
 	<script>
-		$(document).ready(function() {
-			if(window.location.href.indexOf('#ModalFotocomp') = -1) {
-				$('#ModalFotocomp').modal('show');
-			}
+		$(document).ready(function () {
+			$('.modal').each(function () {
+				const modalId = `#${$(this).attr('id')}`;
+				if (window.location.href.indexOf(modalId) !== -1) {
+					$(modalId).modal('show');
+				}
+			});
 		});
 	</script>
 	<script src="js/jquery.min.js"></script>
