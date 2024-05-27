@@ -117,9 +117,10 @@
 	<!-- copyright section end -->
 	<!-- Javascript files-->
 	<script>
-		$(document).ready(function() {
-			if (window.location.hash == '#ModalFotocomp'){
-				$('#ModalFotocomp').modal('show');
+		document.addEventListener("DOMContentLoaded", function() {
+			if (window.location.href.indexOf("#ModalFotocomp") > -1) {
+				var mobileModal = new bootstrap.Modal(document.getElementById('ModalFotocomp'));
+				mobileModal.show();
 			}
 		});
 	</script>
