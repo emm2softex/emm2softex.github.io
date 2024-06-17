@@ -69,7 +69,7 @@
 						<div><img src="images/curso-deeplearning.png" class="services_img"></div>
 						<h2 class="text-center">Aprendizagem de Máquina e Profunda</h2 class="text-center">
 						<p>Descubra o poder das redes neurais e da aprendizagem profunda em visão computacional. Domine Perceptron, CNN, e técnicas avançadas para detecção, segmentação e classificação de imagens.</p>
-						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalDeep">Mais Detalhes</button>
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalDeep">Material Disponível!</button>
 					</div>
 					<div class="col-md-4">
 						<div><img src="images/curso-halide.png" class="services_img"></div>
@@ -118,6 +118,9 @@
 		document.addEventListener("DOMContentLoaded", function() {
 			if (window.location.href.indexOf("#ModalFotocomp") > -1) {
 				var mobileModal = new bootstrap.Modal(document.getElementById('ModalFotocomp'));
+				mobileModal.show();
+			} else if (window.location.href.indexOf("#ModalDeep") > -1) {
+				var mobileModal = new bootstrap.Modal(document.getElementById('ModalDeep'));
 				mobileModal.show();
 			}
 		});
