@@ -1,0 +1,12 @@
+.depoimento_title {
+    margin-left: 20;
+    font-weight: 300;
+}
+
+.depoimento_texto {
+    text-align: justify;
+}
+
+.depoimento_carousel{
+    padding-top: 20;
+}
