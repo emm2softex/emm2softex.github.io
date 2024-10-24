@@ -244,6 +244,8 @@ button {
     width: 100%;
     float: left;
     text-align: center;
+    padding-right: 50px;
+    max-width: 178px;
 }
 
 .logo_mobile {
@@ -287,7 +289,7 @@ button {
 .menu_main {
     -ms-flex-direction: column;
     flex-direction: column;
-    padding-left: 0;
+    padding: 20px 0;
     margin-bottom: 0;
     list-style: none;
     width: 100%;
