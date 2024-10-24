@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Install latest Ruby version from official website
 # https://www.ruby-lang.org/en/documentation/installation/
 
