@@ -234,7 +234,6 @@ button {
     background-image: url(../images/banner-bg.png);
     height: auto;
     background-size: 100%;
-    padding: 0px 0px 20px 0px;
 }
 
 .bg-light {
@@ -245,14 +244,12 @@ button {
     width: 100%;
     float: left;
     text-align: center;
-    padding: 20px 0px 50px 0px;
 }
 
 .logo_mobile {
     width: 100%;
     float: left;
     text-align: center;
-    padding-bottom: 20px;
 }
 
 .mobile_menu {
@@ -338,7 +335,6 @@ button {
 .header_main {
     width: 100%;
     background-size: 100%;
-    padding: 10px 0px 0px 0px;
 }
 
 
