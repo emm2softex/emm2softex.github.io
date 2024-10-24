@@ -234,7 +234,6 @@ button {
     background-image: url(../images/banner-bg.png);
     height: auto;
     background-size: 100%;
-    padding: 0px 0px 20px 0px;
 }
 
 .bg-light {
@@ -245,14 +244,14 @@ button {
     width: 100%;
     float: left;
     text-align: center;
-    padding: 20px 0px 50px 0px;
+    padding-right: 50px;
+    max-width: 178px;
 }
 
 .logo_mobile {
     width: 100%;
     float: left;
     text-align: center;
-    padding-bottom: 20px;
 }
 
 .mobile_menu {
@@ -290,7 +289,7 @@ button {
 .menu_main {
     -ms-flex-direction: column;
     flex-direction: column;
-    padding-left: 0;
+    padding: 20px 0;
     margin-bottom: 0;
     list-style: none;
     width: 100%;
@@ -337,9 +336,7 @@ button {
 
 .header_main {
     width: 100%;
-    background-image: url(../images/header-bg.png);
     background-size: 100%;
-    padding: 10px 0px 0px 0px;
 }
 
 
