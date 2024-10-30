@@ -327,6 +327,11 @@ button {
     background-color: #2b2278;
 }
 
+.menu_main li .logo a:hover {
+    color: none;
+    background-color: transparent;
+}
+
 .mb-lg-0,
 .my-lg-0 {
     margin-bottom: 0!important;
