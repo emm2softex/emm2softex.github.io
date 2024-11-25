@@ -194,28 +194,32 @@
 		function carouselNormalization() {
 			var items = $('#carouselExampleSlidesOnly .carousel-item'), //grab all slides
 				heights = [], //create empty array to store height values
+				height = 0,
 				tallest; //create variable to make note of the tallest slide
 
 			if (items.length) {
-				function normalizeHeights() {
-					items.each(function () { //add heights to array
-						heights.push($(this).height());
-					});
-					tallest = Math.max.apply(null, heights)+20; //cache largest value + top padding
-					items.each(function () {
-						$(this).css('min-height', tallest + 'px');
-					});
-				};
 				normalizeHeights();
-
-				$(window).on('resize orientationchange', function () {
-					tallest = 0, heights.length = 0; //reset vars
-					items.each(function () {
-						$(this).css('min-height', '0'); //reset min-height
-					});
-					normalizeHeights(); //run it again 
-				});
 			}
+
+			function normalizeHeights() {
+				items.each(function () { //add heights to array
+					// if active testimony is the tallest, fixes object height by adding 20 px
+					height = $(this).hasClass('active') ? $(this).height() + 20 : $(this).height();
+					heights.push(height);
+				});
+				tallest = Math.max.apply(null, heights) + 20; //cache largest value + top padding
+				items.each(function () {
+					$(this).css('min-height', tallest + 'px');
+				});
+			};
+
+			$(window).on('resize orientationchange', function () {
+				tallest = 0, heights.length = 0; //reset vars
+				items.each(function () {
+					$(this).css('min-height', '0'); //reset min-height
+				});
+				normalizeHeights(); //run it again 
+			});
 		}
 	</script>
 	<script src="js/jquery.min.js"></script>
