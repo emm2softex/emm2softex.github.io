@@ -64,7 +64,8 @@
 			<div class="services_section_2">
 				<div class="row justify-content-center">
 					<div class="col-md-4 col-lg-3 col-8 align-self-center">
-						<div><img src="images/curso-fotografiacomputacional.png" class="services_img material_image"></div>
+						<div><img src="images/curso-fotografiacomputacional.png" class="services_img material_image">
+						</div>
 					</div>
 					<div class="col-md-7 col-lg-8 col-xl-9 col-12 align-self-center">
 						<h2 class="text-center">Fotografia Computacional</h2 class="text-center">
@@ -106,7 +107,8 @@
 				<br>
 				<div class="row justify-content-center">
 					<div class="col-md-4 col-lg-3 col-8 align-self-center">
-						<div><img src="images/curso-analiseperformancesistemasheterogeneos.png" class="services_img material_image">
+						<div><img src="images/curso-analiseperformancesistemasheterogeneos.png"
+								class="services_img material_image">
 						</div>
 					</div>
 					<div class="col-md-7 col-lg-8 col-xl-9 col-12 align-self-center">
@@ -135,7 +137,8 @@
 				<br>
 				<div class="row justify-content-center">
 					<div class="col-md-4 col-lg-3 col-8 align-self-center">
-						<div><img src="images/curso-analisequalidadeimagem.png" class="services_img material_image"></div>
+						<div><img src="images/curso-analisequalidadeimagem.png" class="services_img material_image">
+						</div>
 					</div>
 					<div class="col-md-7 col-lg-8 col-xl-9 col-12 align-self-center">
 						<h2 class="text-center">Análise de Qualidade de Imagem</h2 class="text-center">
@@ -185,7 +188,39 @@
 				var mobileModal = new bootstrap.Modal(document.getElementById('ModalIQA'));
 				mobileModal.show();
 			}
+			carouselNormalization();
 		});
+
+		function carouselNormalization() {
+			var items = $('#carouselExampleSlidesOnly .carousel-item'), //grab all slides
+				heights = [], //create empty array to store height values
+				height = 0,
+				tallest; //create variable to make note of the tallest slide
+
+			if (items.length) {
+				normalizeHeights();
+			}
+
+			function normalizeHeights() {
+				items.each(function () { //add heights to array
+					// if active testimony is the tallest, fixes object height by adding 20 px
+					height = $(this).hasClass('active') ? $(this).height() + 20 : $(this).height();
+					heights.push(height);
+				});
+				tallest = Math.max.apply(null, heights) + 20; //cache largest value + top padding
+				items.each(function () {
+					$(this).css('min-height', tallest + 'px');
+				});
+			};
+
+			$(window).on('resize orientationchange', function () {
+				tallest = 0, heights.length = 0; //reset vars
+				items.each(function () {
+					$(this).css('min-height', '0'); //reset min-height
+				});
+				normalizeHeights(); //run it again 
+			});
+		}
 	</script>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/popper.min.js"></script>

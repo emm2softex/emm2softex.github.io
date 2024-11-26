@@ -52,3 +52,11 @@
 
     background: transparent !important;
 }
+
+.subtext {
+    color:grey;
+}
+
+.publication_image {
+    margin-bottom: 10px;
+}
