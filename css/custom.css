@@ -54,9 +54,33 @@
 }
 
 .subtext {
-    color:grey;
+    color: grey;
 }
 
 .publication_image {
     margin-bottom: 10px;
+}
+
+.ranking_button {
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    border-block: 1px solid rgb(0, 0, 0);
+    border-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-inline: 1px solid rgb(0, 0, 0);
+    box-sizing: border-box !important;
+    color: #FFF;
+    cursor: pointer;
+    display: flex;
+    font-family: Avenir, -apple-system, system-ui, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    justify-content: center;
+    line-height: 22px;
+    padding-block: 20px;
+    padding-inline: 20px;
+    text-decoration: none solid #FFF !important;
+    width: fit-content;
 }
