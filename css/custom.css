@@ -84,3 +84,38 @@
     text-decoration: none solid #FFF !important;
     width: fit-content;
 }
+
+.read_publication_button {
+    width: fit-content;
+    align-items: center;
+    background-color: rgb(57, 67, 86);
+    border-radius: 6px;
+    border-width: 0px;
+    box-sizing: border-box;
+    color: #FFF;
+    cursor: pointer;
+    display: flex;
+    font-family: Lexend, sans-serif;
+    font-size: 18px;
+    justify-content: center;
+    line-height: 21px;
+    padding-block: 10px;
+    padding-inline: 15px;
+    text-align: center;
+    text-decoration: none solid #FFF;
+}
+
+.read_publication_button .read_publication_button_image {
+    border-width: 0px;
+    box-sizing: border-box;
+    color: #FFF;
+    display: block;
+    height: 20px;
+    line-height: 21px;
+    margin-inline-end: 5px;
+    margin-right: 5px;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    text-decoration: none solid #FFF;
+    width: 20px;
+}
