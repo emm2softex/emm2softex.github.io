@@ -3,9 +3,6 @@
 # Install latest Ruby version from official website
 # https://www.ruby-lang.org/en/documentation/installation/
 
-# Update Rubygems to latest version
-gem update --system 3.6.3
-
 # Install Jekyll and Buncle
 gem install jekyll bundler
 # Update Rubygems, if requested
