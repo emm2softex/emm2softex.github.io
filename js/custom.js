@@ -370,3 +370,23 @@ $(function () {
 
 
 });
+
+
+
+/*corrigindo problema com animação inconsistente no dropdown*/
+
+const target = document.getElementById('menu_dropdown');
+const observer = new MutationObserver(callback);
+
+observer.observe(target, { attributes: true });
+
+function callback(mutations) {
+	if (!target.classList.contains('show')) {
+			console.log('entrou');
+			target.style.removeProperty('position');
+			target.style.removeProperty('transform');
+			target.style.removeProperty('top');
+			target.style.removeProperty('left');
+			target.style.removeProperty('will-change');
+		}
+} 
