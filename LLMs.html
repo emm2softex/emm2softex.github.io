@@ -46,21 +46,21 @@
 	<div class="services_section layout_padding">
 		<div class="container">
 			<div class="row">
+				<h1 class="services_taital">LLMs</h1>
+			</div>
+			<div class="row">
 				<div class="col-xl-8 col-lg-6 col-md">
-					<h1 class="services_taital">LLMs</h1>
 					<p>Modelos de Linguagem de Grande Escala (LLMs, do inglês Large Language Models) são modelos de
 						inteligência artificial treinados em vastas quantidades de dados textuais para entender e gerar
-						linguagem humana. Esses modelos utilizam técnicas avançadas de aprendizado de máquina, como
-						redes neurais profundas, para capturar padrões complexos na linguagem. Eles podem realizar uma
-						variedade de tarefas relacionadas ao processamento de linguagem natural (NLP), como tradução
-						automática, resumo de textos, respostas a perguntas e geração de conteúdo. Exemplos conhecidos
-						de LLMs incluem o GPT-4, desenvolvido pela OpenAI, que pode gerar textos coerentes e
-						contextualmente relevantes em diversas situações.</p>
+						linguagem humana. Esses modelos utilizam técnicas avançadas de aprendizado de máquina para
+						capturar padrões complexos na linguagem. Eles podem realizar uma ampla variedade de tarefas
+						relacionadas ao processamento de linguagem natural (NLP), como tradução automática, resumo de
+						textos, respostas a perguntas e geração de conteúdo. Exemplos conhecidos de LLMs incluem o
+						GPT-4, desenvolvido pela OpenAI, que pode gerar textos coerentes e contextualmente relevantes em
+						diversas situações.</p>
 					<p>Esses modelos são treinados em grandes volumes de texto retirados de livros, artigos, websites e
-						outras fontes, o que lhes permite adquirir um vasto conhecimento sobre diferentes tópicos e
-						estilos de escrita. Durante o treinamento, os LLMs aprendem a prever a próxima palavra em uma
-						sequência de palavras, o que os torna capazes de gerar texto que parece ter sido escrito por um
-						humano. Apesar de sua utilidade, os LLMs também levantam questões éticas, como o potencial para
+						outras fontes, o que lhes permite adquirir conhecimento sobre diferentes tópicos e estilos de
+						escrita. Apesar de sua utilidade, os LLMs também levantam questões éticas, como o potencial para
 						gerar desinformação, viés nos dados e a necessidade de supervisão humana em suas aplicações.</p>
 				</div>
 				<div class="col-xl-4 col-lg-6 d-none d-lg-block my-auto">
@@ -80,11 +80,36 @@
 					<p>No LuxAI, nos especializamos em vencer essas barreiras, desenvolvendo aplicações móveis com LLMs
 						utilizando técnicas estado-da-arte, como Prompt Engineering e RAG para conseguir obter boas
 						respostas de modelos menores, aplicados a contextos específicos, tudo executado localmente para
-						garantir a segurança dos dados dos usuários.</p>
-					<img src="images/RAG.png" />
-					<p style="color: gray;">Imagem adaptada de <a
-							href="https://lightning.ai/lightning-ai/studios/rag-using-llama-3-by-meta-ai"
-							target="_blank" rel="noopener noreferrer">Lightning AI</a></p>
+						garantir a segurança dos dados dos usuários e sem necessidade de um servidor especializado em
+						IA. Essas técnicas também permitem uma flexibilidade maior da solução, já que é possível ajustar
+						a base de conhecimento do modelo com pouco custo computacional.</p>
+					<iframe id="apresentacao_rag"
+						src="https://docs.google.com/presentation/d/e/2PACX-1vQLr-cwuPj6F2-oXKDbjUXu4NYuG_aqa7aq4izlctXHibasN2GAPBae6P6yuVY79mtVXaRN9gjbGGKs/embed?start=false&loop=false&delayms=3000"
+						frameborder="0" width="100%" allowfullscreen="true" mozallowfullscreen="true"
+						webkitallowfullscreen="true"></iframe>
+				</div>
+			</div>
+			<br><br>
+			<div class="row">
+				<div class="col-md">
+					<h2>Validação</h2>
+					<p>As estratégias implementadas foram validadas utilizando um framework de avaliação de modelos
+						(veja o trabalho completo na página de <b><a href="publicacoes">publicações</a></b>). O LuxAI
+						desenvolveu uma pipeline para execução de LLMs em dispositivos móveis incorporando RAG,
+						estruturando um fluxo de que começa com a fragmentação semântica dos dados em pequenos trechos
+						(chunks). Em seguida, diferentes LLMs Geradores são utilizados para produzir respostas com base
+						exclusivamente no contexto recuperado, garantindo maior fidelidade às informações disponíveis.
+						Para avaliar a qualidade dessas respostas, foi implementado um LLM Juiz, responsável por
+						analisar a coerência das respostas em relação ao texto de referência e atribuir notas conforme
+						critérios pré-definidos. Essa abordagem possibilita a comparação objetiva do desempenho de
+						múltiplos modelos, permitindo identificar se a solução desenvolvida consegue dar respostas
+						corretas para as perguntas do usuário, considerando um contexto espefícico.</p>
+					<p>Os benefícios dessa abordagem são significativos, tanto para pesquisadores quanto para usuários
+						que precisam de respostas precisas extraídas de grandes volumes de informações. O framework
+						oferece um meio objetivo de avaliar a eficácia da recuperação pelo RAG e a adequação das
+						respostas ao contexto fornecido, eliminando a subjetividade da análise manual. A automação do
+						processo de avaliação por meio do LLM Juiz reduz custos e tempo de análise, tornando a
+						metodologia escalável para conjuntos de dados maiores.</p>
 				</div>
 			</div>
 		</div>
@@ -104,6 +129,24 @@
 	</div>
 	<!-- copyright section end -->
 	<!-- Javascript files-->
+	<script>
+		const resize_ob = new ResizeObserver(function (entries) {
+			// Como a seleção é de apenas um elemento, pegamos o primeiro item do array e definimos um objeto "rect" com as dimensões do slide
+			let rect = entries[0].contentRect;
+
+			// Pega a largura atual do slide
+			let width = rect.width;
+
+			// Calcula a altera pela proporção do slide (16:9) e acrescenta a dimensão da barra de navegação do Google Slides (32px)
+			let height = width / 16 * 9 + 32;
+
+			// Define a altura atualizada do slide
+			document.getElementById('apresentacao_rag').setAttribute('height', height)
+		});
+
+		// Observa as mudanças de dimensão
+		resize_ob.observe(document.querySelector("#apresentacao_rag"));
+	</script>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.bundle.min.js"></script>
