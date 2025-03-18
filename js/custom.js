@@ -382,7 +382,6 @@ observer.observe(target, { attributes: true });
 
 function callback(mutations) {
 	if (!target.classList.contains('show')) {
-			console.log('entrou');
 			target.style.removeProperty('position');
 			target.style.removeProperty('transform');
 			target.style.removeProperty('top');
